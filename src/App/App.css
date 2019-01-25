@@ -18,8 +18,10 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.delete {
+  margin-left: 1em;
+  color: crimson;
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {

@@ -5,6 +5,7 @@ import Basic from './components/Basic';
 
 interface AppProps {
     stuff: string[],
+    deleteThing: (thingIndex: number) => void;
 }
 
 class App extends Component<AppProps> {
@@ -14,18 +15,10 @@ class App extends Component<AppProps> {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     {
-                        this.props.stuff.map((thing) => {
-                            return <Basic info={thing} key={thing} />
+                        this.props.stuff.map((thing, i) => {
+                            return <Basic info={thing} key={i} index={i} deleteFunc={this.props.deleteThing} />
                         })
                     }
-                    <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                    Learn React
-                    </a>
                 </header>
             </div>
         );
